@@ -1,6 +1,6 @@
 # InfoHub Javascript 新聞 API 說明文件
 
-InfoHub Javascript API 提供開發者輕鬆存取各國各類型的目標新聞訊息，並且將目標新聞放置在開發者所指定的網頁空間內，在本說明文件內，將會提供 **API 使用範例**與**基本介面介紹**。
+InfoHub Javascript API 提供開發者輕鬆存取各國各類型的目標新聞訊息，並且將目標新聞放置在開發者所指定的網頁空間內，在本說明文件內，將會提供 **API 使用範例**與**基本介面介紹**。
 
 若有任何問題，歡迎來信 daniel.hsieh@droi.com 詢問，謝謝。
 
@@ -65,18 +65,18 @@ InfoHub Javascript API 提供開發者輕鬆存取各國各類型的目標新�
 * utm_medium (String): InfoHub API 用戶導流 Agent 名稱。
   * 隱含值： `javascript_api`。
 * utm_campaign (String): InfoHub API 用戶導流方式。
-  * 隱含值： `news_click`。
+  * 隱含值： `news_click`。
 
 ### 建構子方法選填選項 (與目標新聞提取有關)
 
 * language (String): 目標新聞語言。
-  * 隱含值：`en`。
+  * 隱含值：`en`。
   * 候選值：ISO 639-1 語言碼。
 * country (String): 目標新聞國家。
-  * 隱含值：`US`。
+  * 隱含值：`US`。
   * 候選值：ISO 3166-1 alpha-2 國碼。
 * category (String): 目標新聞分類。
-  * 隱含值：`for you`
+  * 隱含值：`for you`
   * 候選值：
 
     | 分類     | 代碼          |
@@ -105,16 +105,16 @@ InfoHub Javascript API 提供開發者輕鬆存取各國各類型的目標新�
     | 遊戲     | gaming        |
 
 * query_size (Number): 目標新聞數量。
-  * 隱含值：`10`
+  * 隱含值：`10`
   * 候選值：`1 ~ 10`
 
 ### 建構子方法選填選項 (與目標新聞呈現有關)
 
 * appendToSelector (string): 將目標新聞放置特定的區塊
-  * 隱含值：`#news-container`
+  * 隱含值：`#news-container`
   * 候選值：jquery selector
 * image_position (string): 新聞圖片位置
-  * 隱含值：`right`
+  * 隱含值：`right`
   * 候選職：`left` 或者 `right`
 
 ### 方法說明
@@ -146,7 +146,7 @@ fetchNewsRawData() | 提取新聞的原始資料
 
     ```javascript
     var query = $.newsquery();
-    query.fetchNewsRawData(function(data){
+    query.fetchNewsRawData(function(data){
         // 輸出 data: JSON格式的新聞原始資料
         console.log(JSON.stringify(data));
     });
