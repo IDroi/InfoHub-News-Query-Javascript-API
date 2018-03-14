@@ -61,7 +61,7 @@ InfoHub Javascript API 提供開發者輕鬆存取各國各類型的目標新聞
 ### 建構子方法選填選項 (與客戶分析有關)
 
 * utm_source (String): InfoHub API 用戶名稱。
-  * 隱含值： `InfoHub`。
+  * 隱含值： `infohub`。
 * utm_medium (String): InfoHub API 用戶導流 Agent 名稱。
   * 隱含值： `javascript_api`。
 * utm_campaign (String): InfoHub API 用戶導流方式。
@@ -123,9 +123,10 @@ InfoHub Javascript API 提供開發者輕鬆存取各國各類型的目標新聞
 -------------------|----
 show()             | 將目標新聞展現在特定的區塊
 refresh()          | 重新更新該區塊的新聞
+more()             | 要求更多目標新聞
 fetchNewsRawData() | 提取新聞的原始資料
 
-* show():
+* show(): 將目標新聞展現在特定的區塊
   * 代碼
 
     ```javascript
@@ -133,7 +134,7 @@ fetchNewsRawData() | 提取新聞的原始資料
     query.show();
     ```
 
-* refresh():
+* refresh(): 重新更新該區塊的新聞
   * 代碼
 
     ```javascript
@@ -141,7 +142,15 @@ fetchNewsRawData() | 提取新聞的原始資料
     query.refresh();
     ```
 
-* fetchNewsRawData():
+* more(): 要求更多目標新聞
+  * 代碼
+
+    ```javascript
+    var query = $.newsquery();
+    query.more();
+    ```
+
+* fetchNewsRawData(): 提取新聞的原始資料
   * 代碼
 
     ```javascript
