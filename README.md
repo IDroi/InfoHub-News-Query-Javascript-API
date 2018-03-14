@@ -31,13 +31,13 @@ InfoHub Javascript API 提供開發者輕鬆存取各國各類型的目標新聞
             // case 2: query en-US beauty news and place image in left position
             // then, we put all news in #hot-girl-en-us-news-container block
             var query2 = $.newsquery({
-                'language':'en',            // news language
-                'country':'US',             // news country
+                'language':'zh',            // news language
+                'country':'TW',             // news country
                 'category':'beauty',        // news category
                 'image_position':'left',    // news main image position
 
                 // the element to host news block
-                'appendToSelector':'#hot-girl-en-us-news-container'
+                'appendToSelector':'#hot-girl-zh-tw-news-container'
             });
             query2.show();
         });

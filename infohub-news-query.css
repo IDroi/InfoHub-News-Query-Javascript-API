@@ -1,0 +1,88 @@
+/*!
+ * InfoHub News Query API
+ * Copyright (c) 2018 Daniel Hsieh <daniel.hsieh@droi.com>
+ * User can use this API to query InfoHub's news database.
+ */
+
+.news-element{
+    height: 88px;
+    background-color: #fff;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    cursor: pointer;
+    border-top: 1px solid #e0e4e9;
+    padding: 15px;
+}
+
+.news-element-first{
+    height: 88px;
+    background-color: #fff;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.main-layer {
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.main-text-part {
+    width: 60%;
+    height: 100%;
+    color: #4a4a4a;
+}
+
+.main-text-part-without-image {
+    width: 100%;
+    height: 100%;
+    color: #4a4a4a;
+}
+
+.main-image-part {
+    width: 36%;
+    height: 100%;
+}
+
+.main-image-part .news-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.top-layer {
+    font-size: 16px;
+    height: 60px;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+.bottom-layer {
+    height: 14px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 14px;
+    padding-top: 14px;
+}
+
+.bottom-text-part {
+    float: left;
+    color: #9b9b9b;
+}
+
+.bottom-icon-part {
+    float: right;
+    color: #f15a59;
+}
+
+.icon-image {
+    float: left;
+}
+
+.icon-number {
+    float: left;
+    padding: 0 5px 0;
+}

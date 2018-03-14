@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>InfoHub News Query API Demo</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Daniel Hsieh">
+    <meta name="google-play-app" content="app-id=com.idroi.infohub">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="infohub-news-query.css" type="text/css" media="screen">
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="infohub-news-query.js"></script>
+    <script>
+        $(function () {
+            // case 1: default news query
+            var query = $.newsquery();
+            query.show();
+
+            // case 2: query en-US beauty news and place image in left position
+            // then, we put all news in #hot-girl-en-us-news-container block
+            var query2 = $.newsquery({
+                'language':'zh',            // news language
+                'country':'TW',             // news country
+                'category':'beauty',        // news category
+                'image_position':'left',    // news main image position
+
+                // the element to host news block
+                'appendToSelector':'#hot-girl-zh-tw-news-container'
+            });
+            query2.show();
+        });
+    </script>
+
+    <p>InfoHub News (default):</p>
+    <div id='news-container'>
+    </div>
+
+    <p>InfoHub News (en-US-beauty):</p>
+    <div id='hot-girl-zh-tw-news-container'>
+    </div>
+
+</body>
+
+</html>
