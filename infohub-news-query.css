@@ -6,7 +6,6 @@
 
 .news-element{
     height: 88px;
-    background-color: #fff;
     overflow-y: hidden;
     overflow-x: hidden;
     cursor: pointer;
@@ -16,7 +15,6 @@
 
 .news-element-first{
     height: 88px;
-    background-color: #fff;
     overflow-y: hidden;
     overflow-x: hidden;
     cursor: pointer;
