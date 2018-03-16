@@ -46,14 +46,21 @@
         },
 
         refresh: function() {
-            $(this.options.appendToSelector).empty();
-            this.more();
+            var self = this;
+            this.more(function() {
+                $(self.options.appendToSelector).empty();
+            });
         },
 
-        more: function() {
+        more: function(ready_callback) {
             var self = this;
             this.fetchNewsRawData(function(data) {
                 self.log();
+
+                if(ready_callback != undefined) {
+                    ready_callback();
+                }
+                
                 data.forEach(function(element, index) {
                     if(index >= self.options.query_size) {
                         return;
@@ -85,7 +92,6 @@
                         '<img class="pre-render-img" src="' + pre_render_img_base64 + '">' +
                     '</div>'
                 )
-                console.log('append index: ' + i);
                 $(this.options.appendToSelector).append(template);
             }
         },
