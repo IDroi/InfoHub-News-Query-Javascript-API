@@ -124,6 +124,7 @@ InfoHub Javascript API 提供開發者輕鬆存取各國各類型的目標新聞
 show()             | 將目標新聞展現在特定的區塊
 refresh()          | 重新更新該區塊的新聞
 more()             | 要求更多目標新聞
+prerender()        | 預載模糊占位圖
 fetchNewsRawData() | 提取新聞的原始資料
 
 * show(): 將目標新聞展現在特定的區塊
@@ -148,6 +149,14 @@ fetchNewsRawData() | 提取新聞的原始資料
     ```javascript
     var query = $.newsquery();
     query.more();
+    ```
+
+* prerender(): 預載模糊占位圖
+  * 代碼
+
+    ```javascript
+    var query = $.newsquery();
+    query.prerender();
     ```
 
 * fetchNewsRawData(): 提取新聞的原始資料
