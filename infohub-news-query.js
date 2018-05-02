@@ -239,10 +239,14 @@
     };
 
     function baasGetNewsAsync(self, callback) {
-        var ih_time = genIHTime();
-        var ih_token = genIHToken(self.options);
-        var ih_slot = self.ih_slot_counter++;
-        var url = genURL(self.options, ih_time, ih_token, ih_slot);
+        // for get-news-data
+        // var ih_time = genIHTime();
+        // var ih_token = genIHToken(self.options);
+        // var ih_slot = self.ih_slot_counter++;
+        // var url = genURL(self.options, ih_time, ih_token, ih_slot);
+        // for get-all-data
+        var seed = self.ih_slot_counter++;
+        var url = genGetAllDataURL(self.options, seed);
 
         var socket = new XMLHttpRequest();
         console.log("GET: " + url);
@@ -253,7 +257,7 @@
             if(socket.readyState == 4 && socket.status == 200) {
                 var data = JSON.parse(socket.responseText);
                 if(data['Code'] == 0 && data['Result'] != undefined && data['Result']['message'] == 'OK') {
-                    var results = data['Result']['results'];
+                    var results = data['Result']['news_results'];
                     callback(results);
                 } else {
                     console.log('something wrong in infohub server ...');
@@ -265,6 +269,13 @@
         socket.send(null);
     }
 
+    function genGetAllDataURL(options, seed) {
+        var u = "http://api.infohubapp.com/infohub_task_handler?task=get-all-data&api_version=1&image_limit=0&video_limit=0&news_limit=10&language={0}&country={1}&category={2}&utm_source={3}&utm_medium={4}&utm_campaign={5}&seed={6}"
+            .format(options['language'], options['country'], options['category'], options['utm_source'], options['utm_medium'], options['utm_campaign'], seed);
+        return u;
+    }
+
+    /* start get-news-data (DEPRECATED) */
     function genIHTime() {
         var t = Math.floor(Date.now() / 1000);
         t = t - t % 600;
@@ -277,10 +288,10 @@
         if(ih_time != undefined) {
             u += "&ih_time=" + ih_time;
         }
-        if(ih_time != undefined) {
+        if(ih_token != undefined) {
             u += "&ih_token=" + ih_token;
         }
-        if(ih_time != undefined) {
+        if(ih_slot != undefined) {
             u += "&ih_slot=" + ih_slot
         }
         return u;
@@ -301,6 +312,7 @@
         }
         return output;
     }
+    /* end get-news-data (DEPRECATED) */
 
     function appendStyleString(styleString, style) {
         var returnString;
