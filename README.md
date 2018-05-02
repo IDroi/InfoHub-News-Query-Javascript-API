@@ -116,6 +116,9 @@ InfoHub Javascript API 提供開發者輕鬆存取各國各類型的目標新聞
 * image_position (string): 新聞圖片位置
   * 隱含值：`right`
   * 候選職：`left` 或者 `right`
+* open_new_window (boolean): 在新視窗開啟新聞
+  * 隱含值：`true`
+  * 候選值：`true` 或者 `false`
 
 ### 方法說明
 

@@ -172,8 +172,14 @@
             if($(this.options.appendToSelector).children().length == 0) {
                 news_element_type = 'news-element-first';
             }
+
+            var open_method = 'location.href=\'' + page_link + '\'';
+            if(this.options.open_new_window) {
+                var open_method = 'window.open(\'' + page_link + '\')';
+            }
+
             var template = (
-                '<div class="' + news_element_type + '" onclick="location.href=\'' + page_link + '\'">' +
+                '<div class="' + news_element_type + '" onclick="' + open_method + '">' +
                     '<div class="main-layer">' + 
                         left_part_html +
                         right_part_html +
@@ -211,7 +217,8 @@
         category: 'for you',
         query_size: 5,
         appendToSelector: '#news-container',
-        image_position: 'right'
+        image_position: 'right',
+        open_new_window: true
     };
 
     String.prototype.format = function() {
