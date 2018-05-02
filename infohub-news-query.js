@@ -245,7 +245,7 @@
         // var ih_slot = self.ih_slot_counter++;
         // var url = genURL(self.options, ih_time, ih_token, ih_slot);
         // for get-all-data
-        var seed = self.ih_slot_counter++;
+        var seed = (self.ih_slot_counter++ % 50) + 1;
         var url = genGetAllDataURL(self.options, seed);
 
         var socket = new XMLHttpRequest();
